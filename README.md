@@ -14,6 +14,12 @@ Place the scripts in the same folder as your extracted Terraria music files.
 
 If using `TerrariaWavebankRenameGameDev.py`, install FFmpeg and ensure it is available in your system PATH.
 
+## Usage
+
+1. Extract `Wave Bank.xwb` into a folder (for example, `TerrariaMusic`).
+2. Copy `TerrariaWavebankRename.py` or `TerrariaWavebankRenameGameDev.py` into that same folder.
+3. Run the script.
+
 ## Acknowledgements
 
 Official track names are © Re-Logic.
