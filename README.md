@@ -24,7 +24,7 @@ If using `TerrariaWavebankRenameGameDev.py`, install FFmpeg and ensure it is ava
 
 Official track names are © Re-Logic.
 
-This project only uses the publicly documented names for file renaming purposes.
+Track names were compiled using Terraria's official names, with the MusicDisplay mod by GabeHasWon serving as reference during development.
 
 The official Terraria track names used by this project are based on
 the MusicDisplay mod by GabeHasWon.
@@ -96,19 +96,21 @@ Examples include:
 
 - foobar2000 + vgmstream
 
-## Supported input
+## Supported Input
 
-- .wav
-- .mp3
+- `.wav`
+- `.mp3`
 
-Output
+## Output
 
-TerrariaWavebankRename.py
-- .wav
-- .mp3
+### TerrariaWavebankRename.py
 
-TerrariaWavebankRenameGameDev.py
-- .ogg
+- `.wav`
+- `.mp3`
+
+### TerrariaWavebankRenameGameDev.py
+
+- `.ogg`
 
 ## Example output
 
