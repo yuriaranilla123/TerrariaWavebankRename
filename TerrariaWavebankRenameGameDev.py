@@ -6,9 +6,11 @@ import sys
 
 if shutil.which("ffmpeg") is None:
     print("Error: FFmpeg is not installed or not in PATH.")
+    input("\nPress Enter to exit...")
     sys.exit(1)
 
 track_mapping = {
+    # === ORIGINAL 1–61 ===
     "01": "Overworld Night", "02": "Eerie", "03": "Overworld Day", "04": "Boss 1",
     "05": "Title Screen", "06": "Jungle", "07": "Corruption", "08": "The Hallow",
     "09": "Underground Corruption", "10": "Underground Hallow", "11": "Boss 2",
@@ -27,6 +29,8 @@ track_mapping = {
     "54": "Underground Jungle", "55": "Jungle Night", "56": "Queen Slime",
     "57": "Empress of Light", "58": "Duke Fishron", "59": "Morning Rain",
     "60": "Alt Title Theme [Console Menu]", "61": "Underground Desert",
+
+    # === OTHERWORLDLY (62–88) — Drunk world / Terraria Otherworld OST ===
     "62": "Prelude [Otherworldly Rain]",
     "63": "Every Adventure Has a Beginning [Otherworldly Day]",
     "64": "Night Falls, Darkness Emerge [Otherworldly Night]",
@@ -54,9 +58,13 @@ track_mapping = {
     "86": "Sky Guardian [Otherworldly Jungle]",
     "87": "Otherworldly Wall of Flesh",
     "88": "Postlude - Credits [Otherworldly Hallow]",
+
+    # === POST-1.4.1 ADDITIONS ===
     "89": "Journey's End [Credits]",
     "90": "Deerclops",
     "91": "Aether [Shimmer]",
+
+    # === 1.4.5 BOSS-SPECIFIC TRACKS ===
     "92": "The Destroyer",      "93": "King Slime",
     "94": "Lunatic Cultist",    "95": "Alternate Queen Bee",
     "96": "Queen Bee",          "97": "The Twins",
@@ -73,7 +81,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 for filename in sorted(os.listdir(SCRIPT_DIR)):
     if not filename.lower().endswith((".wav", ".mp3")):
         continue
-        
+
     input_path = os.path.join(SCRIPT_DIR, filename)
 
     match = re.match(r"^(\d+)", filename)
@@ -114,4 +122,5 @@ for filename in sorted(os.listdir(SCRIPT_DIR)):
     else:
         print(f"Failed ({result.returncode}): {filename}")
 
-print("Done.")
+print(f"\nConversion complete! Output folder:\n{OUTPUT_DIR}")
+input("\nPress Enter to exit...")

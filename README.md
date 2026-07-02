@@ -26,9 +26,6 @@ Official track names are © Re-Logic.
 
 Track names were compiled using Terraria's official names, with the MusicDisplay mod by GabeHasWon serving as reference during development.
 
-The official Terraria track names used by this project are based on
-the MusicDisplay mod by GabeHasWon.
-
 Track names are based on:
 
 MusicDisplay/Localization/en-US_Mods.MusicDisplay.TrackNames.hjson
@@ -40,9 +37,8 @@ Thank you to GabeHasWon for documenting the official Terraria music names.
 
 ## Features
 
-- Renames extracted WAV files
-- Renames extracted MP3 files
-- Supports Terraria 1.4.5 and later (104 official music tracks, including Terraria: Otherworld and post-1.4.5 additions).
+- Renames extracted WAV and MP3 files
+- Supports Terraria 1.4.5 and later (104 official music tracks, including Terraria: Otherworld and post-1.4.5 additions)
 - Includes the Terraria: Otherworld soundtrack
 - Includes Terraria 1.4.5 boss-exclusive music
 
@@ -56,7 +52,7 @@ Recommended if you simply want the official Terraria music names without convert
 
 ### TerrariaWavebankRenameGameDev.py
 
-Converts extracted audio to `.ogg` (Vorbis) using FFmpeg and applies the official Terraria track names.
+Converts extracted `.wav` and `.mp3` audio to `.ogg` (Vorbis) using FFmpeg while applying the official Terraria track names.
 
 Recommended for game development, mods, or engines that use OGG audio.
 

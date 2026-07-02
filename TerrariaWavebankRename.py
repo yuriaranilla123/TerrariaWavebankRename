@@ -66,9 +66,13 @@ track_mapping = {
     "104": "Skeletron",
 }
 
-for filename in os.listdir('.'):
-    if not (filename.endswith('.wav') or filename.endswith('.mp3')):
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+for filename in sorted(os.listdir(SCRIPT_DIR)):
+    if not filename.lower().endswith((".wav", ".mp3")):
         continue
+
+    input_path = os.path.join(SCRIPT_DIR, filename)
 
     match = re.match(r'^(\d+)', filename)
     if not match:
@@ -82,15 +86,17 @@ for filename in os.listdir('.'):
 
     ext = os.path.splitext(filename)[1]
     new_name = f"{key} - {correct_name}{ext}"
+    output_path = os.path.join(SCRIPT_DIR, new_name)
 
     if filename == new_name:
         continue
 
     try:
-        os.rename(filename, new_name)
+        os.rename(input_path, output_path)
         print(f"Renamed: {filename} → {new_name}")
     except FileExistsError:
-        os.remove(filename)
+        os.remove(input_path)
         print(f"Removed duplicate: {filename}")
 
-print("Done.")
+print(f"\nDone! Renamed files are in:\n{SCRIPT_DIR}")
+input("\nPress Enter to exit...")
